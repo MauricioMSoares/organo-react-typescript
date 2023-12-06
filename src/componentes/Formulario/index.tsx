@@ -14,6 +14,7 @@ const Formulario = (props: FormularioProps) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
+    const [data, setData] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
@@ -23,12 +24,14 @@ const Formulario = (props: FormularioProps) => {
             nome,
             cargo,
             imagem,
-            time
+            time,
+            data
         })
         setNome('')
         setCargo('')
         setImagem('')
         setTime('')
+        setData('')
     }
 
     return (
@@ -48,6 +51,13 @@ const Formulario = (props: FormularioProps) => {
                     placeholder="Digite seu cargo" 
                     value={cargo}
                     aoAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
+                    label="Data de entrada no time"
+                    placeholder=""
+                    value={data}
+                    aoAlterado={value => setData(value)}
+                    tipo="date"
                 />
                 <CampoTexto
                     label="Imagem"
